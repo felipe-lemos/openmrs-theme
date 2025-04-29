@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        {
+          "name": "Accent",
+          "slug": "accent",
+          "color": "#007fff"
+        },
+        {
+          "name": "Background",
+          "slug": "background",
+          "color": "#ffffff"
+        },
+        {
+          "name": "Text",
+          "slug": "text",
+          "color": "#0c0801"
+        },
+        {
+          "name": "Purple",
+          "slug": "purple",
+          "color": "#5a57a2"
+        },
+        {
+          "name": "White",
+          "slug": "white",
+          "color": "#ffffff"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Poppins, sans-serif",
+          "name": "Poppins",
+          "slug": "poppins"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 10
+      }
+    }
+  },
+  "styles": {
+    "elements": {
+      "button": {
+        "color": {
+          "background": "#5a57a2",
+          "text": "#ffffff"
+        }
+      }
+    }
+  }
+}

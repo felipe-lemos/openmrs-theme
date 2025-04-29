@@ -1,0 +1,46 @@
+:root {
+  --primary-color: #007fff;
+  --text-color: #0c0801;
+  --background-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 500;
+}
