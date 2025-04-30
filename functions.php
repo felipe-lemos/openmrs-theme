@@ -237,6 +237,18 @@ add_action('after_setup_theme', function() {
 });
 
 /**
+ * Enqueue editor styles for Gutenberg
+ */
+function openmrs_theme_editor_styles() {
+    // Add editor styles
+    add_theme_support('editor-styles');
+    
+    // Enqueue editor styles
+    add_editor_style('assets/css/editor-style.css');
+}
+add_action('after_setup_theme', 'openmrs_theme_editor_styles');
+
+/**
  * Create required directories for the hero block if they don't exist
  */
 function openmrs_create_block_directories() {

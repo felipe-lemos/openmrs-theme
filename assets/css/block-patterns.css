@@ -435,3 +435,143 @@
 .has-about-us-background {
   background-color: #fdeee9 !important;
 }
+/**
+ * Block Editor Styles for Product Image Content Pattern
+ */
+
+/* Basic layout styling */
+.wp-block .layout478_component {
+  width: 100% !important;
+}
+
+.wp-block .layout478_content {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 40px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Image group styling */
+.wp-block .layout478_image-group {
+  flex: 1 !important;
+  min-width: 300px !important;
+  position: relative !important;
+  padding-top: 20px !important;
+}
+
+.wp-block .layout478_image-wrapper2 {
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 100% !important;
+}
+
+.wp-block .layout478_image-wrapper1 {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 35% !important;
+  z-index: 2 !important;
+  transform: translateX(25%) translateY(-20%) !important;
+}
+
+.wp-block .layout478_image2,
+.wp-block .layout478_image1 {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* Content right styling */
+.wp-block .layout478_content-right {
+  flex: 1 !important;
+  min-width: 300px !important;
+}
+
+/* Tag styling */
+.wp-block .tag.is-teal {
+  display: inline-flex !important;
+  padding: 0.35rem 0.75rem !important;
+  background-color: rgba(37, 194, 160, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.wp-block .text-color-teal {
+  color: #25c2a0 !important;
+}
+
+/* Margin styling */
+.wp-block .margin-bottom.margin-xsmall {
+  margin-bottom: 0.5rem !important;
+}
+
+.wp-block .margin-bottom.margin-small {
+  margin-bottom: 1rem !important;
+}
+
+.wp-block .margin-top.margin-medium {
+  margin-top: 1.5rem !important;
+}
+
+/* Heading styling */
+.wp-block .heading-style-h2 {
+  font-size: 2.5rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Button styling */
+.wp-block .button-group {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+}
+
+.wp-block .button.is-link.is-icon {
+  display: flex !important;
+  align-items: center !important;
+  color: #25c2a0 !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  gap: 0.5rem !important;
+}
+
+/* SVG icon styling */
+.wp-block .icon-embed-xxsmall svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
+.wp-block .w-embed svg path {
+  stroke: currentColor !important;
+}
+
+/* Container and padding styles */
+.wp-block .container-large {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+.wp-block .padding-global {
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+.wp-block .padding-section-large {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+/* Text styles */
+.wp-block .text-size-medium {
+  font-size: 1.125rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0 !important;
+}
+
+.wp-block .text-size-small {
+  font-size: 0.875rem !important;
+}
