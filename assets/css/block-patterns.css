@@ -417,3 +417,17 @@
 .tag.is-orange {
   background-color: rgba(236, 102, 37, 0.1);
 }
+/* Community Hero Background */
+.has-community-background {
+  background-color: #eeeef4 !important;
+}
+
+/* Product Hero Background */
+.has-product-background {
+  background-color: #e4f2f1 !important;
+}
+
+/* About Us Hero Background */
+.has-about-us-background {
+  background-color: #fdeee9 !important;
+}

@@ -208,3 +208,18 @@
   font-size: 18px !important;
   line-height: 1.6 !important;
 }
+
+/* Community Hero Background */
+.has-community-background {
+  background-color: #eeeef4 !important;
+}
+
+/* Product Hero Background */
+.has-product-background {
+  background-color: #e4f2f1 !important;
+}
+
+/* About Us Hero Background */
+.has-about-us-background {
+  background-color: #fdeee9 !important;
+}
