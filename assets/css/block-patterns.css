@@ -617,3 +617,48 @@
 .editor-styles-wrapper .button.is-link.is-orange {
   color: #ec6625 !important;
 }
+
+/* Timeline Component Styles */
+.timeline17_component {
+  width: 100%;
+}
+
+.max-width-large {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-center {
+  align-items: center;
+  justify-content: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+/* Button group center alignment */
+.button-group.is-center {
+  justify-content: center;
+}
+
+/* Editor-specific styles for the timeline component */
+.editor-styles-wrapper .max-width-large {
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.editor-styles-wrapper .align-center {
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.editor-styles-wrapper .text-align-center {
+  text-align: center !important;
+}
+
+.editor-styles-wrapper .button-group.is-center {
+  justify-content: center !important;
+}
