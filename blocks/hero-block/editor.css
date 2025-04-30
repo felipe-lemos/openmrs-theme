@@ -1,0 +1,67 @@
+/**
+ * Hero Block Editor Styles
+ */
+
+.hero-block-editor {
+  padding: 20px;
+  background: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.hero-preview {
+  padding: 25px;
+  margin-bottom: 15px;
+  border-top-width: 16px;
+  border-top-style: solid;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hero-preview-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-breadcrumb {
+  font-size: 12px;
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.hero-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Preview Styles */
+.border-purple-preview {
+  border-top-color: #5b57a3;
+}
+
+.border-teal-preview {
+  border-top-color: #007d79;
+}
+
+.border-orange-preview {
+  border-top-color: #f5832a;
+}
+
+.text-color-scampi-preview {
+  color: #5b57a3;
+}
+
+.text-color-teal-preview {
+  color: #007d79;
+}
+
+.text-color-orange-preview {
+  color: #f5832a;
+}

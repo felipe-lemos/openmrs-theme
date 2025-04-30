@@ -12,11 +12,7 @@ get_header(); ?>
         ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <?php if (!has_block('core/cover') && !is_front_page()) : ?>
-            <header class="entry-header padding-section-medium">
-                <div class="max-width-large">
-                    <h1 class="entry-title heading-style-h1 text-color-scampi"><?php the_title(); ?></h1>
-                </div>
-            </header>
+            
             <?php endif; ?>
 
             <div class="entry-content">

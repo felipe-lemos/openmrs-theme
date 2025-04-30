@@ -35,6 +35,33 @@ function openmrs_enqueue_editor_styles() {
 }
 add_action('enqueue_block_editor_assets', 'openmrs_enqueue_editor_styles');
 
+/**
+ * Enqueue configurable hero block editor assets
+ */
+function openmrs_enqueue_hero_block_assets() {
+    // Check if the hero block script exists
+    if (file_exists(get_template_directory() . '/blocks/hero-block/block.js')) {
+        wp_enqueue_script(
+            'openmrs-hero-block-editor',
+            get_template_directory_uri() . '/blocks/hero-block/block.js',
+            array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'),
+            filemtime(get_template_directory() . '/blocks/hero-block/block.js'),
+            true
+        );
+    }
+    
+    // Check if the hero block editor style exists
+    if (file_exists(get_template_directory() . '/blocks/hero-block/editor.css')) {
+        wp_enqueue_style(
+            'openmrs-hero-block-editor-style',
+            get_template_directory_uri() . '/blocks/hero-block/editor.css',
+            array(),
+            filemtime(get_template_directory() . '/blocks/hero-block/editor.css')
+        );
+    }
+}
+add_action('enqueue_block_editor_assets', 'openmrs_enqueue_hero_block_assets');
+
 // Register custom block styles
 function openmrs_register_block_styles() {
     // Register icon styles for the Community Stats pattern
@@ -101,6 +128,84 @@ function openmrs_register_case_study_post_type() {
 }
 add_action( 'init', 'openmrs_register_case_study_post_type' );
 
+/**
+ * Register configurable hero block
+ */
+function openmrs_register_hero_block() {
+    register_block_type('openmrs-theme/hero-block', array(
+        'render_callback' => 'openmrs_render_hero_block',
+        'attributes' => array(
+            'style' => array(
+                'type' => 'string',
+                'default' => 'community',
+            ),
+            'breadcrumb' => array(
+                'type' => 'string',
+                'default' => 'Community',
+            ),
+            'heading' => array(
+                'type' => 'string',
+                'default' => 'A generous, talented<br>global community',
+            ),
+            'description' => array(
+                'type' => 'string',
+                'default' => 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.',
+            ),
+        ),
+    ));
+}
+add_action('init', 'openmrs_register_hero_block');
+
+/**
+ * Render the hero block
+ */
+function openmrs_render_hero_block($attributes) {
+    $style_map = array(
+        'community' => array(
+            'border' => 'border-purple',
+            'text_color' => 'text-color-scampi'
+        ),
+        'product' => array(
+            'border' => 'border-teal',
+            'text_color' => 'text-color-teal'
+        ),
+        'about-us' => array(
+            'border' => 'border-orange',
+            'text_color' => 'text-color-orange'
+        ),
+    );
+
+    $style = isset($attributes['style']) ? $attributes['style'] : 'community';
+    $border_class = isset($style_map[$style]) ? $style_map[$style]['border'] : $style_map['community']['border'];
+    $text_color_class = isset($style_map[$style]) ? $style_map[$style]['text_color'] : $style_map['community']['text_color'];
+    
+    $breadcrumb = isset($attributes['breadcrumb']) ? $attributes['breadcrumb'] : 'Community';
+    $heading = isset($attributes['heading']) ? $attributes['heading'] : 'A generous, talented<br>global community';
+    $description = isset($attributes['description']) ? $attributes['description'] : 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.';
+    
+    ob_start();
+    ?>
+    <div class="wp-block-group padding-section-large border-top-16px <?php echo esc_attr($border_class); ?>">
+        <div class="wp-block-group header44_component">
+            <div class="wp-block-group max-width-large">
+                <div class="wp-block-group margin-bottom margin-xsmall flex align-middle _8px-gap">
+                    <p><a href="/" class="text-style-breadcrumb">Home</a><span class="code-icon is-small"><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.70697 11.9496L7.41397 6.24264L1.70697 0.535645L0.292969 1.94964L4.58597 6.24264L0.292969 10.5356L1.70697 11.9496Z" fill="#666666"></path>
+                    </svg></span><a href="#" class="text-style-breadcrumb is-current"><?php echo esc_html($breadcrumb); ?></a></p>
+                </div>
+                
+                <div class="wp-block-group margin-bottom margin-small">
+                    <h1 class="wp-block-heading heading-style-h1 <?php echo esc_attr($text_color_class); ?>"><?php echo wp_kses_post($heading); ?></h1>
+                </div>
+                
+                <p class="text-size-medium"><?php echo wp_kses_post($description); ?></p>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
 // Theme supports
 add_action('after_setup_theme', function() {
     add_theme_support('editor-styles');
@@ -130,4 +235,16 @@ add_action('after_setup_theme', function() {
         require $file;
     }
 });
+
+/**
+ * Create required directories for the hero block if they don't exist
+ */
+function openmrs_create_block_directories() {
+    $block_dir = get_template_directory() . '/blocks/hero-block';
+    
+    if (!file_exists($block_dir)) {
+        wp_mkdir_p($block_dir);
+    }
+}
+add_action('after_setup_theme', 'openmrs_create_block_directories');
 ?>

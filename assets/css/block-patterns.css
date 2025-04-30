@@ -391,3 +391,29 @@
 .editor-styles-wrapper .blog56_item-link {
   pointer-events: none;
 }
+
+/* Product Hero Styles */
+.border-teal {
+  border-color: #007d79;
+}
+
+.text-color-teal {
+  color: #007d79;
+}
+
+.tag.is-teal {
+  background-color: rgba(2, 125, 120, 0.1);
+}
+
+/* About Us Hero Styles */
+.border-orange {
+  border-color: #ec6625;
+}
+
+.text-color-orange {
+  color: #ec6625;
+}
+
+.tag.is-orange {
+  background-color: rgba(236, 102, 37, 0.1);
+}
