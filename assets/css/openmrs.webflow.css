@@ -1013,9 +1013,7 @@ figcaption {
   padding: 0.375rem 1rem;
   font-weight: 500;
   text-decoration: none;
-  transition:
-    border-color 0.2s,
-    background-color 0.2s;
+  transition: border-color 0.2s, background-color 0.2s;
   display: flex;
 }
 
@@ -1391,9 +1389,7 @@ figcaption {
 }
 
 .shadow-xsmall {
-  box-shadow:
-    0 1px 3px #0000001a,
-    0 1px 2px #0000000f;
+  box-shadow: 0 1px 3px #0000001a, 0 1px 2px #0000000f;
 }
 
 .icon-1x1-custom1 {
@@ -1538,9 +1534,7 @@ figcaption {
 }
 
 .shadow-large {
-  box-shadow:
-    0 20px 24px -4px #00000014,
-    0 8px 8px -4px #00000008;
+  box-shadow: 0 20px 24px -4px #00000014, 0 8px 8px -4px #00000008;
 }
 
 .icon-embed-xlarge {
@@ -1631,9 +1625,7 @@ figcaption {
 }
 
 .shadow-small {
-  box-shadow:
-    0 4px 8px -2px #0000001a,
-    0 2px 4px -2px #0000000f;
+  box-shadow: 0 4px 8px -2px #0000001a, 0 2px 4px -2px #0000000f;
 }
 
 .icon-1x1-medium {
@@ -1642,9 +1634,7 @@ figcaption {
 }
 
 .shadow-medium {
-  box-shadow:
-    0 12px 16px -4px #00000014,
-    0 4px 6px -2px #00000008;
+  box-shadow: 0 12px 16px -4px #00000014, 0 4px 6px -2px #00000008;
 }
 
 .text-size-large {
@@ -2797,7 +2787,11 @@ figcaption {
 }
 
 .section_layout289.background-color-dark-orange {
-  background-color: var(--color-scheme-1--tango);
+  background-color: #ec6625;
+}
+
+.section_layout289.background-color-dark-teal {
+  background-color: #027d78;
 }
 
 .blog56_component {

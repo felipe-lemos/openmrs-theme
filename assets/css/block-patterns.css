@@ -2787,7 +2787,10 @@ figcaption {
 }
 
 .section_layout289.background-color-dark-orange {
-  background-color: var(--color-scheme-1--tango);
+  background-color: #ec6625;
+}
+.section_layout289.background-color-dark-teal {
+  background-color: #027d78;
 }
 
 .blog56_component {
