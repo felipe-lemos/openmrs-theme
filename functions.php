@@ -106,6 +106,71 @@ add_action('init', function() {
     register_post_type('case_study', $args);
 });
 
+// === Register Event Post Type and Taxonomy ===
+
+add_action('init', function() {
+    // Event CPT
+    $labels = [
+        'name'               => _x('Events', 'post type general name', 'openmrs-theme'),
+        'singular_name'      => _x('Event', 'post type singular name', 'openmrs-theme'),
+        'menu_name'          => _x('Events', 'admin menu', 'openmrs-theme'),
+        'name_admin_bar'     => _x('Event', 'add new on admin bar', 'openmrs-theme'),
+        'add_new'            => _x('Add New', 'event', 'openmrs-theme'),
+        'add_new_item'       => __('Add New Event', 'openmrs-theme'),
+        'new_item'           => __('New Event', 'openmrs-theme'),
+        'edit_item'          => __('Edit Event', 'openmrs-theme'),
+        'view_item'          => __('View Event', 'openmrs-theme'),
+        'all_items'          => __('All Events', 'openmrs-theme'),
+        'search_items'       => __('Search Events', 'openmrs-theme'),
+        'parent_item_colon'  => __('Parent Events:', 'openmrs-theme'),
+        'not_found'          => __('No events found.', 'openmrs-theme'),
+        'not_found_in_trash' => __('No events found in Trash.', 'openmrs-theme'),
+    ];
+    $args = [
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => ['slug' => 'event'],
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => null,
+        'supports'           => ['title', 'editor', 'excerpt', 'thumbnail'],
+        'show_in_rest'       => true,
+        'menu_icon'          => 'dashicons-calendar-alt',
+    ];
+    register_post_type('event', $args);
+
+    // Event Category Taxonomy
+    register_taxonomy('event_category', 'event', [
+        'label'        => __('Event Categories', 'openmrs-theme'),
+        'hierarchical' => true,
+        'show_in_rest' => true,
+        'rewrite'      => ['slug' => 'event-category'],
+    ]);
+});
+
+// === Register Event Meta Fields ===
+
+add_action('init', function() {
+    $fields = [
+        'event_date', 'event_weekday', 'event_time', 'event_timezone',
+        'event_time_alt', 'event_time_altzone', 'event_location',
+        'calendar_link', 'details_link'
+    ];
+    foreach ($fields as $field) {
+        register_post_meta('event', $field, [
+            'show_in_rest' => true,
+            'single' => true,
+            'type' => 'string',
+            'auth_callback' => '__return_true',
+        ]);
+    }
+});
+
 // === Register Case Studies Block ===
 
 add_action('init', function() {
@@ -135,6 +200,7 @@ add_action('init', function() {
         ],
     ]);
 });
+
 
 
 // === Register Hero Block ===
@@ -220,6 +286,20 @@ function openmrs_render_hero_block($attributes) {
     <?php
     return ob_get_clean();
 }
+
+// === Register Event Section Pattern ===
+
+add_action('init', function() {
+    register_block_pattern(
+        'openmrs-theme/event-section',
+        [
+            'title'       => __('Event Section', 'openmrs-theme'),
+            'description' => __('Section displaying upcoming events.', 'openmrs-theme'),
+            'content'     => '<!-- wp:openmrs-theme/event-list /-->',
+            'categories'  => ['openmrs-theme'],
+        ]
+    );
+});
 
 // === Theme Supports, Menus, Patterns ===
 
