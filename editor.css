@@ -109,7 +109,9 @@
 }
 
 .editor-styles-wrapper .tag.is-purple {
-  background-color: rgba(90, 87, 162, 0.1) !important;
+  border-color: var(--_primitives---colors--scampi);
+  background-color: var(--_primitives---colors--scampi-lighter);
+  color: var(--_primitives---colors--scampi);
 }
 
 .editor-styles-wrapper .heading-style-h2 {

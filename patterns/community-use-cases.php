@@ -23,9 +23,10 @@ register_block_pattern(
                         <div class="wp-block-group max-width-large">
                             <!-- wp:group {"className":"margin-bottom margin-xsmall"} -->
                             <div class="wp-block-group margin-bottom margin-xsmall">
-                                <!-- wp:group {"className":"tag is-purple"} -->
-                                    <!-- wp:paragraph {"className":"text-size-small text-color-scampi"} -->
-                                    <p class="text-size-small text-color-scampi">Community case studies</p>
+                                 <!-- wp:group {"className":"margin-bottom margin-xsmall"} -->
+                                <div class="wp-block-group margin-bottom margin-xsmall">
+                                    <!-- wp:paragraph {"className":"tag is-purple text-size-small text-color-scampi"} -->
+                                    <p class="tag is-purple text-size-small text-color-scampi">Community case studies</p>
                                     <!-- /wp:paragraph -->
                                 </div>
                                 <!-- /wp:group -->
