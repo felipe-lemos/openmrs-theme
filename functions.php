@@ -162,50 +162,62 @@ add_action('init', 'openmrs_register_hero_block');
 function openmrs_render_hero_block($attributes) {
     $style_map = array(
         'community' => array(
+            'background' => 'background-color-purple',
             'border' => 'border-purple',
-            'text_color' => 'text-color-scampi'
+            'heading' => 'text-color-scampi',
+            'icon' => 'c4a7d726-b376-87f0-ba65-a76a5d0813b3',
         ),
         'product' => array(
+            'background' => 'background-color-teal',
             'border' => 'border-teal',
-            'text_color' => 'text-color-teal'
+            'heading' => '',
+            'icon' => 'b1c41d3a-f7e8-8277-72d2-c8c7ecadbf80',
         ),
         'about-us' => array(
+            'background' => 'background-color-orange',
             'border' => 'border-orange',
-            'text_color' => 'text-color-orange'
+            'heading' => 'text-color-tango',
+            'icon' => 'b949c26c-d007-4de5-a695-212ec38decd5',
         ),
     );
 
-    $style = isset($attributes['style']) ? $attributes['style'] : 'community';
-    $border_class = isset($style_map[$style]) ? $style_map[$style]['border'] : $style_map['community']['border'];
-    $text_color_class = isset($style_map[$style]) ? $style_map[$style]['text_color'] : $style_map['community']['text_color'];
-    
+    $style = isset($attributes['style']) && isset($style_map[$attributes['style']]) ? $attributes['style'] : 'community';
+    $s = $style_map[$style];
+
     $breadcrumb = isset($attributes['breadcrumb']) ? $attributes['breadcrumb'] : 'Community';
     $heading = isset($attributes['heading']) ? $attributes['heading'] : 'A generous, talented<br>global community';
     $description = isset($attributes['description']) ? $attributes['description'] : 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.';
-    
+
     ob_start();
     ?>
-    <div class="wp-block-group padding-section-large border-top-16px <?php echo esc_attr($border_class); ?>">
-        <div class="wp-block-group header44_component">
-            <div class="wp-block-group max-width-large">
-                <div class="wp-block-group margin-bottom margin-xsmall flex align-middle _8px-gap">
-                    <p><a href="/" class="text-style-breadcrumb">Home</a><span class="code-icon is-small"><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.70697 11.9496L7.41397 6.24264L1.70697 0.535645L0.292969 1.94964L4.58597 6.24264L0.292969 10.5356L1.70697 11.9496Z" fill="#666666"></path>
-                    </svg></span><a href="#" class="text-style-breadcrumb is-current"><?php echo esc_html($breadcrumb); ?></a></p>
+    <header class="section_header44 <?php echo esc_attr($s['background']); ?>">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="padding-section-large border-top-16px <?php echo esc_attr($s['border']); ?>">
+                    <div class="header44_component">
+                        <div class="max-width-large">
+                            <div class="margin-bottom margin-xsmall flex align-middle _8px-gap">
+                                <a href="/" class="text-style-breadcrumb">Home</a>
+                                <div bind="<?php echo esc_attr($s['icon']); ?>" class="code-icon is-small w-embed">
+                                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.70697 11.9496L7.41397 6.24264L1.70697 0.535645L0.292969 1.94964L4.58597 6.24264L0.292969 10.5356L1.70697 11.9496Z" fill="#666666"></path>
+                                    </svg>
+                                </div>
+                                <a href="#" class="text-style-breadcrumb is-current"><?php echo esc_html($breadcrumb); ?></a>
+                            </div>
+                            <div class="margin-bottom margin-small">
+                                <h1 class="heading-style-h1 <?php echo esc_attr($s['heading']); ?>"><?php echo $heading; ?></h1>
+                            </div>
+                            <p class="text-size-medium"><?php echo $description; ?></p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="wp-block-group margin-bottom margin-small">
-                    <h1 class="wp-block-heading heading-style-h1 <?php echo esc_attr($text_color_class); ?>"><?php echo wp_kses_post($heading); ?></h1>
-                </div>
-                
-                <p class="text-size-medium"><?php echo wp_kses_post($description); ?></p>
             </div>
         </div>
-    </div>
+    </header>
     <?php
     return ob_get_clean();
 }
-
 // Theme supports
 add_action('after_setup_theme', function() {
     add_theme_support('editor-styles');
