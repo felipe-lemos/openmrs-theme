@@ -1,192 +1,194 @@
 <?php
-// Enqueue cleaned CSS
-add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style('openmrs-theme-style', get_template_directory_uri() . '/assets/css/style.css');
-});
 
-/**
- * Enqueue block pattern specific styles
- */
-function openmrs_enqueue_block_pattern_styles() {
+// === Enqueue Theme and Editor Styles ===
+
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_style(
+        'openmrs-theme-style',
+        get_template_directory_uri() . '/assets/css/style.css',
+        [],
+        wp_get_theme()->get('Version')
+    );
     wp_enqueue_style(
         'openmrs-block-patterns',
         get_template_directory_uri() . '/assets/css/block-patterns.css',
-        array(),
-        wp_get_theme()->get( 'Version' )
+        [],
+        wp_get_theme()->get('Version')
     );
-}
-add_action('wp_enqueue_scripts', 'openmrs_enqueue_block_pattern_styles');
+});
 
-/**
- * Enqueue styles for the block editor
- */
-function openmrs_enqueue_editor_styles() {
-    // Add editor styles
+add_action('enqueue_block_editor_assets', function() {
     add_editor_style('assets/css/style.css');
     add_editor_style('assets/css/block-patterns.css');
-    
-    // Enqueue custom editor stylesheet with more specific styles
     wp_enqueue_style(
         'openmrs-editor-styles',
         get_template_directory_uri() . '/assets/css/editor-styles.css',
-        array(),
+        [],
         wp_get_theme()->get('Version')
     );
-}
-add_action('enqueue_block_editor_assets', 'openmrs_enqueue_editor_styles');
+});
 
-/**
- * Enqueue configurable hero block editor assets
- */
-function openmrs_enqueue_hero_block_assets() {
-    // Check if the hero block script exists
-    if (file_exists(get_template_directory() . '/blocks/hero-block/block.js')) {
+// === Enqueue Hero Block Editor Assets ===
+
+add_action('enqueue_block_editor_assets', function() {
+    $block_dir = get_template_directory() . '/blocks/hero-block/';
+    $block_uri = get_template_directory_uri() . '/blocks/hero-block/';
+    if (file_exists($block_dir . 'block.js')) {
         wp_enqueue_script(
             'openmrs-hero-block-editor',
-            get_template_directory_uri() . '/blocks/hero-block/block.js',
-            array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'),
-            filemtime(get_template_directory() . '/blocks/hero-block/block.js'),
+            $block_uri . 'block.js',
+            ['wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components'],
+            filemtime($block_dir . 'block.js'),
             true
         );
     }
-    
-    // Check if the hero block editor style exists
-    if (file_exists(get_template_directory() . '/blocks/hero-block/editor.css')) {
+    if (file_exists($block_dir . 'editor.css')) {
         wp_enqueue_style(
             'openmrs-hero-block-editor-style',
-            get_template_directory_uri() . '/blocks/hero-block/editor.css',
-            array(),
-            filemtime(get_template_directory() . '/blocks/hero-block/editor.css')
+            $block_uri . 'editor.css',
+            [],
+            filemtime($block_dir . 'editor.css')
         );
     }
-}
-add_action('enqueue_block_editor_assets', 'openmrs_enqueue_hero_block_assets');
+});
 
-// Register custom block styles
-function openmrs_register_block_styles() {
-    // Register icon styles for the Community Stats pattern
-    register_block_style('core/image', [
-        'name' => 'icon-code',
-        'label' => __('Code Icon', 'openmrs-theme'),
-    ]);
-    
-    register_block_style('core/image', [
-        'name' => 'icon-contributors',
-        'label' => __('Contributors Icon', 'openmrs-theme'),
-    ]);
-    
-    register_block_style('core/image', [
-        'name' => 'icon-globe',
-        'label' => __('Globe Icon', 'openmrs-theme'),
-    ]);
-    
-    register_block_style('core/image', [
-        'name' => 'icon-buildings',
-        'label' => __('Buildings Icon', 'openmrs-theme'),
-    ]);
-}
-add_action('init', 'openmrs_register_block_styles');
+// === Register Custom Block Styles ===
 
-/**
- * Register Case Study post type
- */
-function openmrs_register_case_study_post_type() {
-    $labels = array(
-        'name'               => _x( 'Case Studies', 'post type general name', 'openmrs-theme' ),
-        'singular_name'      => _x( 'Case Study', 'post type singular name', 'openmrs-theme' ),
-        'menu_name'          => _x( 'Case Studies', 'admin menu', 'openmrs-theme' ),
-        'name_admin_bar'     => _x( 'Case Study', 'add new on admin bar', 'openmrs-theme' ),
-        'add_new'            => _x( 'Add New', 'case study', 'openmrs-theme' ),
-        'add_new_item'       => __( 'Add New Case Study', 'openmrs-theme' ),
-        'new_item'           => __( 'New Case Study', 'openmrs-theme' ),
-        'edit_item'          => __( 'Edit Case Study', 'openmrs-theme' ),
-        'view_item'          => __( 'View Case Study', 'openmrs-theme' ),
-        'all_items'          => __( 'All Case Studies', 'openmrs-theme' ),
-        'search_items'       => __( 'Search Case Studies', 'openmrs-theme' ),
-        'parent_item_colon'  => __( 'Parent Case Studies:', 'openmrs-theme' ),
-        'not_found'          => __( 'No case studies found.', 'openmrs-theme' ),
-        'not_found_in_trash' => __( 'No case studies found in Trash.', 'openmrs-theme' )
-    );
+add_action('init', function() {
+    $styles = [
+        ['icon-code', __('Code Icon', 'openmrs-theme')],
+        ['icon-contributors', __('Contributors Icon', 'openmrs-theme')],
+        ['icon-globe', __('Globe Icon', 'openmrs-theme')],
+        ['icon-buildings', __('Buildings Icon', 'openmrs-theme')],
+    ];
+    foreach ($styles as [$name, $label]) {
+        register_block_style('core/image', [
+            'name'  => $name,
+            'label' => $label,
+        ]);
+    }
+});
 
-    $args = array(
+// === Register Case Study Post Type ===
+
+add_action('init', function() {
+    $labels = [
+        'name'               => _x('Case Studies', 'post type general name', 'openmrs-theme'),
+        'singular_name'      => _x('Case Study', 'post type singular name', 'openmrs-theme'),
+        'menu_name'          => _x('Case Studies', 'admin menu', 'openmrs-theme'),
+        'name_admin_bar'     => _x('Case Study', 'add new on admin bar', 'openmrs-theme'),
+        'add_new'            => _x('Add New', 'case study', 'openmrs-theme'),
+        'add_new_item'       => __('Add New Case Study', 'openmrs-theme'),
+        'new_item'           => __('New Case Study', 'openmrs-theme'),
+        'edit_item'          => __('Edit Case Study', 'openmrs-theme'),
+        'view_item'          => __('View Case Study', 'openmrs-theme'),
+        'all_items'          => __('All Case Studies', 'openmrs-theme'),
+        'search_items'       => __('Search Case Studies', 'openmrs-theme'),
+        'parent_item_colon'  => __('Parent Case Studies:', 'openmrs-theme'),
+        'not_found'          => __('No case studies found.', 'openmrs-theme'),
+        'not_found_in_trash' => __('No case studies found in Trash.', 'openmrs-theme'),
+    ];
+    $args = [
         'labels'             => $labels,
         'public'             => true,
         'publicly_queryable' => true,
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'case-study' ),
+        'rewrite'            => ['slug' => 'case-study'],
         'capability_type'    => 'post',
         'has_archive'        => true,
         'hierarchical'       => false,
         'menu_position'      => null,
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
-        'show_in_rest'       => true // Enable Gutenberg editor
-    );
+        'supports'           => ['title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'],
+        'show_in_rest'       => true,
+    ];
+    register_post_type('case_study', $args);
+});
 
-    register_post_type( 'case_study', $args );
-}
-add_action( 'init', 'openmrs_register_case_study_post_type' );
+// === Register Case Studies Block ===
 
-/**
- * Register configurable hero block
- */
-function openmrs_register_hero_block() {
-    register_block_type('openmrs-theme/hero-block', array(
+add_action('init', function() {
+    register_block_type('openmrs-theme/case-studies', [
+        'render_callback' => 'openmrs_render_case_studies_block',
+        'attributes' => [
+            'title' => [
+                'type'    => 'string',
+                'default' => 'Work with us',
+            ],
+            'description' => [
+                'type'    => 'string',
+                'default' => 'Are you ready to contribute your skills and experience to helping us achieve our mission worldwide?',
+            ],
+            'tag' => [
+                'type'    => 'string',
+                'default' => 'Jobs',
+            ],
+            'button_url' => [
+                'type'    => 'string',
+                'default' => 'https://talk.openmrs.org/c/implementing/job-board/19',
+            ],
+            'button_text' => [
+                'type'    => 'string',
+                'default' => 'Go to job board',
+            ],
+        ],
+    ]);
+});
+
+
+// === Register Hero Block ===
+
+add_action('init', function() {
+    register_block_type('openmrs-theme/hero-block', [
         'render_callback' => 'openmrs_render_hero_block',
-        'attributes' => array(
-            'style' => array(
-                'type' => 'string',
+        'attributes' => [
+            'style' => [
+                'type'    => 'string',
                 'default' => 'community',
-            ),
-            'breadcrumb' => array(
-                'type' => 'string',
+            ],
+            'breadcrumb' => [
+                'type'    => 'string',
                 'default' => 'Community',
-            ),
-            'heading' => array(
-                'type' => 'string',
+            ],
+            'heading' => [
+                'type'    => 'string',
                 'default' => 'A generous, talented<br>global community',
-            ),
-            'description' => array(
-                'type' => 'string',
+            ],
+            'description' => [
+                'type'    => 'string',
                 'default' => 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.',
-            ),
-        ),
-    ));
-}
-add_action('init', 'openmrs_register_hero_block');
+            ],
+        ],
+    ]);
+});
 
-/**
- * Render the hero block
- */
 function openmrs_render_hero_block($attributes) {
-    $style_map = array(
-        'community' => array(
+    $style_map = [
+        'community' => [
             'background' => 'background-color-purple',
-            'border' => 'border-purple',
-            'heading' => 'text-color-scampi',
-            'icon' => 'c4a7d726-b376-87f0-ba65-a76a5d0813b3',
-        ),
-        'product' => array(
+            'border'     => 'border-purple',
+            'heading'    => 'text-color-scampi',
+            'icon'       => 'c4a7d726-b376-87f0-ba65-a76a5d0813b3',
+        ],
+        'product' => [
             'background' => 'background-color-teal',
-            'border' => 'border-teal',
-            'heading' => '',
-            'icon' => 'b1c41d3a-f7e8-8277-72d2-c8c7ecadbf80',
-        ),
-        'about-us' => array(
+            'border'     => 'border-teal',
+            'heading'    => '',
+            'icon'       => 'b1c41d3a-f7e8-8277-72d2-c8c7ecadbf80',
+        ],
+        'about-us' => [
             'background' => 'background-color-orange',
-            'border' => 'border-orange',
-            'heading' => 'text-color-tango',
-            'icon' => 'b949c26c-d007-4de5-a695-212ec38decd5',
-        ),
-    );
-
-    $style = isset($attributes['style']) && isset($style_map[$attributes['style']]) ? $attributes['style'] : 'community';
+            'border'     => 'border-orange',
+            'heading'    => 'text-color-tango',
+            'icon'       => 'b949c26c-d007-4de5-a695-212ec38decd5',
+        ],
+    ];
+    $style = isset($attributes['style'], $style_map[$attributes['style']]) ? $attributes['style'] : 'community';
     $s = $style_map[$style];
-
-    $breadcrumb = isset($attributes['breadcrumb']) ? $attributes['breadcrumb'] : 'Community';
-    $heading = isset($attributes['heading']) ? $attributes['heading'] : 'A generous, talented<br>global community';
-    $description = isset($attributes['description']) ? $attributes['description'] : 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.';
+    $breadcrumb = $attributes['breadcrumb'] ?? 'Community';
+    $heading = $attributes['heading'] ?? 'A generous, talented<br>global community';
+    $description = $attributes['description'] ?? 'Hundreds of developers, technologists, informaticists, health policy officers and<br>government officials come together to build and support our eco-system.';
 
     ob_start();
     ?>
@@ -218,7 +220,9 @@ function openmrs_render_hero_block($attributes) {
     <?php
     return ob_get_clean();
 }
-// Theme supports
+
+// === Theme Supports, Menus, Patterns ===
+
 add_action('after_setup_theme', function() {
     add_theme_support('editor-styles');
     add_theme_support('wp-block-styles');
@@ -227,48 +231,34 @@ add_action('after_setup_theme', function() {
     add_theme_support('custom-logo');
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
-
-    // ✅ NEW: Support for breadcrumb block
     add_theme_support('block-breadcrumbs');
-    
-    // Register navigation menus
-    register_nav_menus(
-        array(
-            'primary' => __('Primary Menu', 'openmrs-theme'),
-            'footer' => __('Footer Menu', 'openmrs-theme'),
-        )
-    );
 
-    register_block_pattern_category('openmrs-theme', array(
+    register_nav_menus([
+        'primary' => __('Primary Menu', 'openmrs-theme'),
+        'footer'  => __('Footer Menu', 'openmrs-theme'),
+    ]);
+
+    register_block_pattern_category('openmrs-theme', [
         'label' => __('OpenMRS Theme Patterns', 'openmrs-theme')
-    ));
+    ]);
 
     foreach (glob(__DIR__ . "/patterns/*.php") as $file) {
         require $file;
     }
 });
 
-/**
- * Enqueue editor styles for Gutenberg
- */
-function openmrs_theme_editor_styles() {
-    // Add editor styles
-    add_theme_support('editor-styles');
-    
-    // Enqueue editor styles
-    add_editor_style('assets/css/editor-style.css');
-}
-add_action('after_setup_theme', 'openmrs_theme_editor_styles');
+// === Editor Styles for Gutenberg (legacy support) ===
 
-/**
- * Create required directories for the hero block if they don't exist
- */
-function openmrs_create_block_directories() {
+add_action('after_setup_theme', function() {
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/editor-style.css');
+});
+
+// === Ensure Hero Block Directory Exists ===
+
+add_action('after_setup_theme', function() {
     $block_dir = get_template_directory() . '/blocks/hero-block';
-    
     if (!file_exists($block_dir)) {
         wp_mkdir_p($block_dir);
     }
-}
-add_action('after_setup_theme', 'openmrs_create_block_directories');
-?>
+});
