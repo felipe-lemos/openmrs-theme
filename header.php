@@ -45,14 +45,6 @@
                         ?>
                     </div>
                     <div class="navbar6_menu-right">
-                        <a href="#" class="button is-link is-icon w-inline-block">
-                            <div class="icon-embed-xsmall w-embed">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path>
-                                </svg>
-                            </div>
-                            <div>EN</div>
-                        </a>
                         <a href="#" class="button is-secondary is-small w-button">
                             <?php echo get_theme_mod('openmrs_menu_button_text', __('Go to our demo', 'openmrs')); ?>
                         </a>
