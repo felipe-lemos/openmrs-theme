@@ -342,3 +342,10 @@ add_action('after_setup_theme', function() {
         wp_mkdir_p($block_dir);
     }
 });
+
+function openmrs_register_menus() {
+    register_nav_menus(array(
+        'primary-menu' => __('Primary Menu', 'openmrs'),
+    ));
+}
+add_action('after_setup_theme', 'openmrs_register_menus');

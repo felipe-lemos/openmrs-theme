@@ -45,6 +45,7 @@
                         ?>
                     </div>
                     <div class="navbar6_menu-right">
+                       
                         <a href="#" class="button is-secondary is-small w-button">
                             <?php echo get_theme_mod('openmrs_menu_button_text', __('Go to our demo', 'openmrs')); ?>
                         </a>
