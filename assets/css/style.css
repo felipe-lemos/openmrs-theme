@@ -44,3 +44,7 @@ h6 {
   display: inline-block;
   font-weight: 500;
 }
+
+.footer10_component {
+  border-color: #fff !important;
+}
