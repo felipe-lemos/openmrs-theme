@@ -112,7 +112,7 @@ register_block_pattern('openmrs-theme/about-us-release-notes', array(
 <div class="wp-block-group max-width-large align-center"><!-- wp:group {"className":"text-align-center"} -->
 <div class="wp-block-group text-align-center"><!-- wp:group {"className":"margin-bottom margin-xsmall"} -->
 <div class="wp-block-group margin-bottom margin-xsmall"><!-- wp:group {"className":"tag is-orange"} -->
-<div class="wp-block-group tag is-orange"><!-- wp:paragraph {"className":"text-size-small text-color-orange"} -->
+<div class="wp-block-group tag is-orange"><!-- wp:paragraph {"className":"text-size-small text-color-tango"} -->
 <p class="text-size-small text-color-orange">Organization updates</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

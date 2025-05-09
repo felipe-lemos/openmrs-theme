@@ -154,7 +154,7 @@ register_block_pattern('openmrs-theme/about-us-image-content', array(
 <!-- wp:group {"className":"layout478_content-right"} -->
 <div class="wp-block-group layout478_content-right"><!-- wp:group {"className":"margin-bottom margin-xsmall"} -->
 <div class="wp-block-group margin-bottom margin-xsmall"><!-- wp:group {"className":"tag is-orange"} -->
-<div class="wp-block-group tag is-orange"><!-- wp:paragraph {"className":"text-size-small text-color-orange"} -->
+<div class="wp-block-group tag is-orange"><!-- wp:paragraph {"className":"text-size-small text-color-tango"} -->
 <p class="text-size-small text-color-orange">About Us</p>
 <!-- /wp:paragraph --></div>
 <!-- /wp:group --></div>

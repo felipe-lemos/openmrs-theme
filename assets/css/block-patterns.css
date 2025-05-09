@@ -3893,6 +3893,10 @@ figcaption {
   color: var(--color-scheme-1--tango);
 }
 
+.text-color-orange {
+  color: #f5832a;
+}
+
 .text-color-scampi {
   color: var(--_primitives---colors--scampi);
 }

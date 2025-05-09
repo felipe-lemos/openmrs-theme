@@ -3902,6 +3902,10 @@ figcaption {
   color: var(--_primitives---colors--teal);
 }
 
+.text-color-orange {
+  color: #f5832a;
+}
+
 .image {
   width: 100%;
   height: 400px;
