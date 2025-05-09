@@ -265,13 +265,13 @@ function openmrs_render_hero_block($attributes) {
                     <div class="header44_component">
                         <div class="max-width-large">
                             <div class="margin-bottom margin-xsmall flex align-middle _8px-gap">
-                                <a href="/" class="text-style-breadcrumb">Home</a>
+                                <a href="/" class="text-style-breadcrumb no-underline">Home</a>
                                 <div bind="<?php echo esc_attr($s['icon']); ?>" class="code-icon is-small w-embed">
                                     <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M1.70697 11.9496L7.41397 6.24264L1.70697 0.535645L0.292969 1.94964L4.58597 6.24264L0.292969 10.5356L1.70697 11.9496Z" fill="#666666"></path>
                                     </svg>
                                 </div>
-                                <a href="#" class="text-style-breadcrumb is-current"><?php echo esc_html($breadcrumb); ?></a>
+                                <a href="#" class="text-style-breadcrumb is-current no-underline"><?php echo esc_html($breadcrumb); ?></a>
                             </div>
                             <div class="margin-bottom margin-small">
                                 <h1 class="heading-style-h1 <?php echo esc_attr($s['heading']); ?>"><?php echo $heading; ?></h1>
@@ -283,6 +283,15 @@ function openmrs_render_hero_block($attributes) {
             </div>
         </div>
     </header>
+    <style>
+        .text-style-breadcrumb,
+        .text-style-breadcrumb:visited,
+        .text-style-breadcrumb:active,
+        .text-style-breadcrumb:hover,
+        .text-style-breadcrumb.is-current {
+            text-decoration: none !important;
+        }
+    </style>
     <?php
     return ob_get_clean();
 }

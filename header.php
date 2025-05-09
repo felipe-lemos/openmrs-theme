@@ -15,6 +15,10 @@
         .navbar6_menu-left ul li {
             list-style: none;
         }
+        .navbar6_menu-left ul li a,
+        .navbar6_menu-left ul li span.navbar6_link {
+            text-decoration: none !important;
+        }
     </style>
     <?php wp_head(); ?>
 </head>
