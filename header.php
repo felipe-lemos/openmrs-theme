@@ -27,8 +27,9 @@
         <div class="navbar6_component color-scheme-1 w-nav">
             <div class="navbar6_container">
                 <a href="<?php echo home_url(); ?>" class="navbar6_logo-link w-nav-brand">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/relume-53435.png" alt="Logo" class="navbar6_logo">
+                    <img src="<?php echo get_theme_mod('openmrs_logo', get_template_directory_uri() . '/assets/images/relume-53435.png'); ?>" alt="Logo" class="navbar6_logo">
                 </a>
+            </div>
                 <nav role="navigation" class="navbar6_menu w-nav-menu">
                     <div class="navbar6_menu-left align-center">
                         <?php

@@ -358,3 +358,20 @@ function openmrs_register_menus() {
     ));
 }
 add_action('after_setup_theme', 'openmrs_register_menus');
+
+add_action('customize_register', function($wp_customize) {
+    $wp_customize->add_setting('openmrs_logo', [
+        'default' => get_template_directory_uri() . '/assets/images/relume-53435.png',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control(
+        $wp_customize,
+        'openmrs_logo',
+        [
+            'label'    => __('Logo', 'openmrs-theme'),
+            'section'  => 'title_tagline', // Or your custom section
+            'settings' => 'openmrs_logo',
+            'priority' => 8,
+        ]
+    ));
+});
