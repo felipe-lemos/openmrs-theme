@@ -9,110 +9,133 @@ function openmrs_register_patterns() {
             'keywords'    => array('features', 'image', 'content'),
             'categories'  => array('custom'),
             'content' => '
-            <!-- wp:group {"className":"container-large background-color-purple","layout":{"type":"constrained"}} -->
-            <div class="wp-block-group container-large  background-color-purple">
-
-<!-- wp:group {"className":"container-large section_header108 color-scheme-1","layout":{"type":"constrained"}} -->
-<div class="wp-block-group container-large section_header108 color-scheme-1">
-    <!-- wp:html -->
-    <div class="gradient-border"></div>
-    <!-- /wp:html -->
-
-    <!-- wp:group {"className":"padding-top padding-xlarge"} -->
-    <div class="wp-block-group padding-top padding-xlarge">
-        <!-- wp:group {"className":"max-width-large align-center"} -->
-        <div class="wp-block-group max-width-large align-center">
-
-            <!-- wp:heading {"level":1,"className":"heading-style-h1 has-text-align-center"} -->
-            <h1 class="heading-style-h1 has-text-align-center">Electronic medical records built by a global community</h1>
-            <!-- /wp:heading -->
-
-            <!-- wp:paragraph {"className":"text-size-medium has-text-align-center"} -->
-            <p class="text-size-medium has-text-align-center">Thousands of people come together to accelerate global health equity together</p>
-            <!-- /wp:paragraph -->
-
-            <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"className":"margin-top margin-medium"} -->
-            <div class="wp-block-buttons margin-top margin-medium">
-                <!-- wp:button {"className":"is-style-fill"} -->
-                <div class="wp-block-button"><a class="wp-block-button__link" href="/community/join-our-community">Join us</a></div>
-                <!-- /wp:button -->
-
-                <!-- wp:button {"className":"is-style-secondary"} -->
-                <div class="wp-block-button is-style-secondary"><a class="wp-block-button__link" href="#">Learn more</a></div>
-                <!-- /wp:button -->
+<!-- wp:group {"className":"section_header108 color-scheme-1","layout":{"type":"constrained"}} -->
+<div class="wp-block-group section_header108 color-scheme-1">
+    <!-- wp:group {"className":"padding-global"} -->
+    <div class="wp-block-group padding-global">
+        <!-- wp:group {"className":"container-large"} -->
+        <div class="wp-block-group container-large">
+            <!-- wp:html -->
+            <div class="gradient-border"></div>
+      
+            <!-- wp:group {"className":"padding-top padding-xlarge"} -->
+            <div class="wp-block-group padding-top padding-xlarge">
+                <!-- wp:group {"className":"max-width-large align-center"} -->
+                <div class="wp-block-group max-width-large align-center">
+                    <!-- wp:group {"className":"text-align-center"} -->
+                    <div class="wp-block-group text-align-center">
+                        <!-- wp:group {"className":"margin-bottom margin-small"} -->
+                        <div class="wp-block-group margin-bottom margin-small">
+                            <!-- wp:heading {"level":1,"className":"heading-style-h1"} -->
+                            <h1 class="heading-style-h1">Electronic medical records built by a global community</h1>
+                            <!-- /wp:heading -->
+                        </div>
+                        <!-- /wp:group -->
+                        <!-- wp:paragraph {"className":"text-size-medium"} -->
+                        <p class="text-size-medium">Thousands of people come together to accelerate global health equity together</p>
+                        <!-- /wp:paragraph -->
+                        <!-- wp:group {"className":"margin-top margin-medium"} -->
+                        <div class="wp-block-group margin-top margin-medium">
+                            <!-- wp:group {"className":"button-group is-center"} -->
+                            <div class="wp-block-group button-group is-center">
+                                <!-- wp:html -->
+                                <a href="/community/join-our-community" class="button is-icon w-inline-block">
+                                    <div>Join us</div>
+                                    <div class="icon-embed-xsmall w-embed">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="48" height="48" viewBox="0 0 24 24"><path fill="currentColor" d="m11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707l-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
+                                    </div>
+                                </a>
+                                <a href="#" class="button is-secondary w-inline-block"><div>Learn more</div></a>
+                                <!-- /wp:html -->
+                            </div>
+                            <!-- /wp:group -->
+                        </div>
+                        <!-- /wp:group -->
+                        <!-- wp:group {"className":"margin-top margin-medium"} -->
+                        <div class="wp-block-group margin-top margin-medium">
+                            <!-- wp:group {"className":"div-block-2"} -->
+                            <div class="wp-block-group div-block-2">
+                                <!-- wp:group -->
+                                <div>
+                                    <div class="text-size-tiny">A collaboration of</div>
+                                    <h1 class="heading-style-h4 text-color-tango">4000+</h1>
+                                    <div class="text-size-tiny">community members</div>
+                                </div>
+                                <div>
+                                    <div class="text-size-tiny">Created</div>
+                                    <h1 class="heading-style-h4 text-color-tango">55 million</h1>
+                                    <div class="text-size-tiny">lines of code</div>
+                                </div>
+                                <div>
+                                    <div class="text-size-tiny">Deployed in</div>
+                                    <h1 class="heading-style-h4 text-color-tango">8,100+</h1>
+                                    <div class="text-size-tiny">facilities worldwide</div>
+                                </div>
+                                <div>
+                                    <div class="text-size-tiny">Supporting</div>
+                                    <h1 class="heading-style-h4 text-color-tango">22 million</h1>
+                                    <div class="text-size-tiny">patient records</div>
+                                </div>
+                                <!-- /wp:group -->
+                            </div>
+                            <!-- /wp:group -->
+                        </div>
+                        <!-- /wp:group -->
+                    </div>
+                    <!-- /wp:group -->
+                </div>
+                <!-- /wp:group -->
             </div>
-            <!-- /wp:buttons -->
-
-            <!-- wp:columns {"className":"margin-top margin-medium text-align-center"} -->
-            <div class="wp-block-columns margin-top margin-medium text-align-center">
-                <!-- wp:column -->
-                <div class="wp-block-column">
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">A collaboration of</p>
-                    <!-- /wp:paragraph -->
-                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
-                    <h4 class="heading-style-h4 text-color-tango">4000+</h4>
-                    <!-- /wp:heading -->
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">community members</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-
-                <!-- wp:column -->
-                <div class="wp-block-column">
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">Created</p>
-                    <!-- /wp:paragraph -->
-                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
-                    <h4 class="heading-style-h4 text-color-tango">55 million</h4>
-                    <!-- /wp:heading -->
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">lines of code</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-
-                <!-- wp:column -->
-                <div class="wp-block-column">
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">Deployed in</p>
-                    <!-- /wp:paragraph -->
-                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
-                    <h4 class="heading-style-h4 text-color-tango">8,100+</h4>
-                    <!-- /wp:heading -->
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">facilities worldwide</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-
-                <!-- wp:column -->
-                <div class="wp-block-column">
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">Supporting</p>
-                    <!-- /wp:paragraph -->
-                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
-                    <h4 class="heading-style-h4 text-color-tango">22 million</h4>
-                    <!-- /wp:heading -->
-                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
-                    <p class="text-size-tiny">patient records</p>
-                    <!-- /wp:paragraph -->
-                </div>
-                <!-- /wp:column -->
-            </div>
-            <!-- /wp:columns -->
-
+            <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
-</div>
-<!-- /wp:group -->
+    <!-- wp:group {"className":"header108_content-bottom"} -->
+    <div class="wp-block-group header108_content-bottom">
+        <!-- wp:group {"className":"header108_image-list"} -->
+        <div class="wp-block-group header108_image-list">
+            <!-- wp:group {"className":"header108_image-group-left"} -->
+            <div class="wp-block-group header108_image-group-left">
+                <div class="header108_image-wrapper is-image-small">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86010f28ad8b3c99261c2_default-35.jpeg" alt="" class="header108_image1"/>
+                </div>
+                <div class="header108_small-image-group">
+                    <div class="header108_image-wrapper">
+                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8603e7acc2777993476ac_default-16.jpeg" alt="" class="header108_image2"/>
+                    </div>
+                    <div class="header108_image-wrapper">
+                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86017ed64f78ec262e036_default-1.jpeg" alt="" class="header108_image3"/>
+                    </div>
+                </div>
+            </div>
+            <!-- /wp:group -->
+            <div class="header108_image-wrapper is-image-large">
+                <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86016ca82b28f459535a1_default-25.jpeg" alt="" class="header108_image4"/>
+            </div>
+            <!-- wp:group {"className":"header108_image-group-right"} -->
+            <div class="wp-block-group header108_image-group-right">
+                <div class="header108_small-image-group">
+                    <div class="header108_image-wrapper">
+                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86013f466af392b57a89a_default-20.jpeg" alt="" class="header108_image5"/>
+                    </div>
+                    <div class="header108_image-wrapper">
+                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8604588f37c5128bbda2f_default-43.jpeg" alt="" class="header108_image6"/>
+                    </div>
+                </div>
+                <div class="header108_image-wrapper is-image-small">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c860462cda33032623bcbd_default-21.jpeg" alt="" class="header108_image7"/>
+                </div>
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
+        <div class="header108_ix-trigger"></div>
+    </div>
+    <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 '
-,
         )
     );
 }
