@@ -17,7 +17,7 @@ function openmrs_register_patterns() {
         <div class="wp-block-group container-large">
             <!-- wp:html -->
             <div class="gradient-border"></div>
-      
+            <!-- /wp:html -->
             <!-- wp:group {"className":"padding-top padding-xlarge"} -->
             <div class="wp-block-group padding-top padding-xlarge">
                 <!-- wp:group {"className":"max-width-large align-center"} -->
@@ -37,16 +37,25 @@ function openmrs_register_patterns() {
                         <!-- wp:group {"className":"margin-top margin-medium"} -->
                         <div class="wp-block-group margin-top margin-medium">
                             <!-- wp:group {"className":"button-group is-center"} -->
-                            <div class="wp-block-group button-group is-center">
-                                <!-- wp:html -->
-                                <a href="/community/join-our-community" class="button is-icon w-inline-block">
-                                    <div>Join us</div>
-                                    <div class="icon-embed-xsmall w-embed">
+                            <div class="button-group is-center">
+                                <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
+                        
+                                    <!-- wp:button {"className":"button is-icon"} -->
+                                    <div class="button is-icon">
+                                        <a href="/community/join-our-community" class="button is-icon w-inline-block">
+                                        <div>Join us</div>
+                                         <div class="icon-embed-xsmall w-embed">
                                         <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="48" height="48" viewBox="0 0 24 24"><path fill="currentColor" d="m11.293 17.293l1.414 1.414L19.414 12l-6.707-6.707l-1.414 1.414L15.586 11H6v2h9.586z"></path></svg>
                                     </div>
-                                </a>
-                                <a href="#" class="button is-secondary w-inline-block"><div>Learn more</div></a>
-                                <!-- /wp:html -->
+                                        </a>
+                                    </div>
+                                    <!-- /wp:button -->
+                                    <!-- wp:button {"className":"is-style-secondary"} -->
+                                                                    <a href="#" class="button is-secondary w-inline-block"><div>Learn more</div></a>
+
+                                    <!-- /wp:button -->
+                                
+                                <!-- /wp:buttons -->
                             </div>
                             <!-- /wp:group -->
                         </div>
