@@ -131,47 +131,74 @@ function openmrs_register_patterns() {
     </div>
     <!-- /wp:group -->
     <!-- wp:group {"className":"header108_content-bottom"} -->
-    <div class="wp-block-group header108_content-bottom">
-        <!-- wp:group {"className":"header108_image-list"} -->
-        <div class="wp-block-group header108_image-list">
-            <!-- wp:group {"className":"header108_image-group-left"} -->
-            <div class="wp-block-group header108_image-group-left">
-                <div class="header108_image-wrapper is-image-small">
-                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86010f28ad8b3c99261c2_default-35.jpeg" alt="" class="header108_image1"/>
-                </div>
-                <div class="header108_small-image-group">
-                    <div class="header108_image-wrapper">
-                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8603e7acc2777993476ac_default-16.jpeg" alt="" class="header108_image2"/>
-                    </div>
-                    <div class="header108_image-wrapper">
-                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86017ed64f78ec262e036_default-1.jpeg" alt="" class="header108_image3"/>
-                    </div>
-                </div>
+<div class="wp-block-group header108_content-bottom">
+    <!-- wp:group {"className":"header108_image-list"} -->
+    <div class="wp-block-group header108_image-list">
+        <!-- wp:group {"className":"header108_image-group-left"} -->
+        <div class="wp-block-group header108_image-group-left">
+            <!-- wp:group {"className":"header108_image-wrapper is-image-small"} -->
+            <div class="wp-block-group header108_image-wrapper is-image-small">
+                <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86010f28ad8b3c99261c2_default-35.jpeg" alt="" class="header108_image1"/>
             </div>
             <!-- /wp:group -->
-            <div class="header108_image-wrapper is-image-large">
-                <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86016ca82b28f459535a1_default-25.jpeg" alt="" class="header108_image4"/>
-            </div>
-            <!-- wp:group {"className":"header108_image-group-right"} -->
-            <div class="wp-block-group header108_image-group-right">
-                <div class="header108_small-image-group">
-                    <div class="header108_image-wrapper">
-                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86013f466af392b57a89a_default-20.jpeg" alt="" class="header108_image5"/>
-                    </div>
-                    <div class="header108_image-wrapper">
-                        <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8604588f37c5128bbda2f_default-43.jpeg" alt="" class="header108_image6"/>
-                    </div>
+            
+            <!-- wp:group {"className":"header108_small-image-group"} -->
+            <div class="wp-block-group header108_small-image-group">
+                <!-- wp:group {"className":"header108_image-wrapper"} -->
+                <div class="wp-block-group header108_image-wrapper">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8603e7acc2777993476ac_default-16.jpeg" alt="" class="header108_image2"/>
                 </div>
-                <div class="header108_image-wrapper is-image-small">
-                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c860462cda33032623bcbd_default-21.jpeg" alt="" class="header108_image7"/>
+                <!-- /wp:group -->
+                
+                <!-- wp:group {"className":"header108_image-wrapper"} -->
+                <div class="wp-block-group header108_image-wrapper">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86017ed64f78ec262e036_default-1.jpeg" alt="" class="header108_image3"/>
                 </div>
+                <!-- /wp:group -->
             </div>
             <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
-        <div class="header108_ix-trigger"></div>
+        
+        <!-- wp:group {"className":"header108_image-wrapper is-image-large"} -->
+        <div class="wp-block-group header108_image-wrapper is-image-large">
+            <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86016ca82b28f459535a1_default-25.jpeg" alt="" class="header108_image4"/>
+        </div>
+        <!-- /wp:group -->
+        
+        <!-- wp:group {"className":"header108_image-group-right"} -->
+        <div class="wp-block-group header108_image-group-right">
+            <!-- wp:group {"className":"header108_small-image-group"} -->
+            <div class="wp-block-group header108_small-image-group">
+                <!-- wp:group {"className":"header108_image-wrapper"} -->
+                <div class="wp-block-group header108_image-wrapper">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c86013f466af392b57a89a_default-20.jpeg" alt="" class="header108_image5"/>
+                </div>
+                <!-- /wp:group -->
+                
+                <!-- wp:group {"className":"header108_image-wrapper"} -->
+                <div class="wp-block-group header108_image-wrapper">
+                    <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c8604588f37c5128bbda2f_default-43.jpeg" alt="" class="header108_image6"/>
+                </div>
+                <!-- /wp:group -->
+            </div>
+            <!-- /wp:group -->
+            
+            <!-- wp:group {"className":"header108_image-wrapper is-image-small"} -->
+            <div class="wp-block-group header108_image-wrapper is-image-small">
+                <img src="https://cdn.prod.website-files.com/67c85c3f929ab76d75395065/67c860462cda33032623bcbd_default-21.jpeg" alt="" class="header108_image7"/>
+            </div>
+            <!-- /wp:group -->
+        </div>
+        <!-- /wp:group -->
     </div>
     <!-- /wp:group -->
+    
+    <!-- wp:group {"className":"header108_ix-trigger"} -->
+    <div class="wp-block-group header108_ix-trigger"></div>
+    <!-- /wp:group -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 '
