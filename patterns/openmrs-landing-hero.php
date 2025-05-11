@@ -62,32 +62,62 @@ function openmrs_register_patterns() {
                         <!-- /wp:group -->
                         <!-- wp:group {"className":"margin-top margin-medium"} -->
                         <div class="wp-block-group margin-top margin-medium">
-                            <!-- wp:group {"className":"div-block-2"} -->
-                            <div class="wp-block-group div-block-2">
-                                <!-- wp:group -->
-                                <div>
-                                    <div class="text-size-tiny">A collaboration of</div>
-                                    <h1 class="heading-style-h4 text-color-tango">4000+</h1>
-                                    <div class="text-size-tiny">community members</div>
+                            <!-- wp:columns {"className":"stats-columns"} -->
+                            <div class="wp-block-columns stats-columns">
+                                <!-- wp:column -->
+                                <div class="wp-block-column">
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">A collaboration of</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
+                                    <h4 class="heading-style-h4 text-color-tango">4000+</h4>
+                                    <!-- /wp:heading -->
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">community members</p>
+                                    <!-- /wp:paragraph -->
                                 </div>
-                                <div>
-                                    <div class="text-size-tiny">Created</div>
-                                    <h1 class="heading-style-h4 text-color-tango">55 million</h1>
-                                    <div class="text-size-tiny">lines of code</div>
+                                <!-- /wp:column -->
+                                <!-- wp:column -->
+                                <div class="wp-block-column">
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">Created</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
+                                    <h4 class="heading-style-h4 text-color-tango">55 million</h4>
+                                    <!-- /wp:heading -->
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">lines of code</p>
+                                    <!-- /wp:paragraph -->
                                 </div>
-                                <div>
-                                    <div class="text-size-tiny">Deployed in</div>
-                                    <h1 class="heading-style-h4 text-color-tango">8,100+</h1>
-                                    <div class="text-size-tiny">facilities worldwide</div>
+                                <!-- /wp:column -->
+                                <!-- wp:column -->
+                                <div class="wp-block-column">
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">Deployed in</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
+                                    <h4 class="heading-style-h4 text-color-tango">8,100+</h4>
+                                    <!-- /wp:heading -->
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">facilities worldwide</p>
+                                    <!-- /wp:paragraph -->
                                 </div>
-                                <div>
-                                    <div class="text-size-tiny">Supporting</div>
-                                    <h1 class="heading-style-h4 text-color-tango">22 million</h1>
-                                    <div class="text-size-tiny">patient records</div>
+                                <!-- /wp:column -->
+                                <!-- wp:column -->
+                                <div class="wp-block-column">
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">Supporting</p>
+                                    <!-- /wp:paragraph -->
+                                    <!-- wp:heading {"level":4,"className":"heading-style-h4 text-color-tango"} -->
+                                    <h4 class="heading-style-h4 text-color-tango">22 million</h4>
+                                    <!-- /wp:heading -->
+                                    <!-- wp:paragraph {"className":"text-size-tiny"} -->
+                                    <p class="text-size-tiny">patient records</p>
+                                    <!-- /wp:paragraph -->
                                 </div>
-                                <!-- /wp:group -->
+                                <!-- /wp:column -->
                             </div>
-                            <!-- /wp:group -->
+                            <!-- /wp:columns -->
                         </div>
                         <!-- /wp:group -->
                     </div>
