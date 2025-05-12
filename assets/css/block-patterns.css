@@ -2389,7 +2389,7 @@ figcaption {
   border-bottom-style: solid;
   border-bottom-width: 0;
   align-items: center;
-  width: 100%;
+  width: auto;
   min-height: 4.5rem;
   padding-left: 5%;
   padding-right: 5%;
@@ -2443,6 +2443,10 @@ figcaption {
   padding-left: 1rem;
   padding-right: 1rem;
   display: grid;
+  position: relative;
+  transform: translateX(
+    -28%
+  ); /* Moves the element 50% of its width to the left */
 }
 
 .header108_image1 {
@@ -2505,7 +2509,7 @@ figcaption {
 
 .header108_image-wrapper.is-image-large {
   width: 36vw;
-  height: 80vh;
+  height: 100vh;
 }
 
 .header108_small-image-group {
