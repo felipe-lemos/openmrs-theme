@@ -375,3 +375,35 @@ add_action('customize_register', function($wp_customize) {
         ]
     ));
 });
+
+function openmrs_customize_register($wp_customize) {
+    $wp_customize->add_section('openmrs_header_button', array(
+        'title'    => __('Header Button', 'openmrs'),
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('openmrs_menu_button_text', array(
+        'default'   => __('Go to our demo', 'openmrs'),
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_setting('openmrs_menu_button_url', array(
+        'default'   => '#',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('openmrs_menu_button_text', array(
+        'label'    => __('Button Text', 'openmrs'),
+        'section'  => 'openmrs_header_button',
+        'settings' => 'openmrs_menu_button_text',
+        'type'     => 'text',
+    ));
+
+    $wp_customize->add_control('openmrs_menu_button_url', array(
+        'label'    => __('Button URL', 'openmrs'),
+        'section'  => 'openmrs_header_button',
+        'settings' => 'openmrs_menu_button_url',
+        'type'     => 'url',
+    ));
+}
+add_action('customize_register', 'openmrs_customize_register');
