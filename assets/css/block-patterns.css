@@ -2899,7 +2899,7 @@ figcaption {
   border: var(--_ui-styles---stroke--border-width) solid
     var(--_primitives---colors--scampi);
   border-radius: var(--_ui-styles---radius--large);
-  background-color: var(--color-scheme-1--foreground);
+  background-color: #ffffff;
   grid-template-rows: auto;
   grid-template-columns: max-content max-content 1fr max-content;
   grid-auto-columns: 1fr;
@@ -2932,7 +2932,7 @@ figcaption {
 }
 
 .divider-vertical {
-  width: var(--_ui-styles---stroke--divider-width);
+  width: 1px; /* Changed from variable to fixed 1px for thinner line */
   background-color: var(--_primitives---colors--scampi);
   align-self: stretch;
 }
