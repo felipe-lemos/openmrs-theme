@@ -2667,6 +2667,42 @@ figcaption {
   display: flex;
 }
 
+/* For SVG icons */
+.footer10_social-list .menu-icon svg {
+  fill: #fff !important;
+  color: #fff !important;
+}
+
+.menu-icon-svg {
+  /* Replace with your desired color */
+  fill: #fff !important;
+}
+
+.menu-item i._mi {
+  color: #fff !important;
+}
+
+/* For font icons */
+.footer10_social-list .menu-icon {
+  color: #fff !important;
+}
+/* Remove bullets and padding from the social menu */
+.footer10_social-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* or grid, if you want them in a row */
+  gap: 1rem; /* adjust spacing between icons */
+}
+
+.footer10_social-list li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background: none;
+}
+
 .footer10_legal-list {
   grid-column-gap: 1.5rem;
   grid-row-gap: 0rem;
@@ -2699,11 +2735,16 @@ figcaption {
 }
 
 .footer10_social-link {
-  color: var(--_primitives---colors--neutral-white);
+  text-decoration: none !important;
+  color: #fff;
   align-items: center;
   font-size: 14px;
   text-decoration: none;
   display: flex;
+}
+
+.footer10_social-list a {
+  text-decoration: none !important;
 }
 
 .footer10_bottom-wrapper {

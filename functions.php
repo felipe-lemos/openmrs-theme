@@ -354,7 +354,10 @@ add_action('after_setup_theme', function() {
 
 function openmrs_register_menus() {
     register_nav_menus(array(
-        'primary-menu' => __('Primary Menu', 'openmrs'),
+        'primary-menu' => __('OpenMRS Primary Menu', 'openmrs'),
+        'footer-menu'  => __('OpenMRS Footer Menu', 'openmrs'),
+        'social' => __('OpenMRS Social Links Menu', 'openmrs-theme'),
+
     ));
 }
 add_action('after_setup_theme', 'openmrs_register_menus');
@@ -405,5 +408,64 @@ function openmrs_customize_register($wp_customize) {
         'settings' => 'openmrs_menu_button_url',
         'type'     => 'url',
     ));
+
+    $wp_customize->add_section('openmrs_footer_section', array(
+        'title'    => __('Footer Settings', 'openmrs-theme'),
+        'priority' => 160,
+    ));
+
+    $wp_customize->add_setting('openmrs_footer_text', array(
+        'default'   => '© ' . date('Y') . ' OpenMRS. All rights reserved.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('openmrs_footer_text', array(
+        'label'    => __('Footer Copyright Text', 'openmrs-theme'),
+        'section'  => 'openmrs_footer_section',
+        'type'     => 'text',
+    ));
 }
 add_action('customize_register', 'openmrs_customize_register');
+
+class Footer_Columns_Walker extends Walker_Nav_Menu {
+    function start_lvl( &$output, $depth = 0, $args = array() ) {
+        if ($depth === 0) {
+            $output .= '<div class="footer10_link-list">';
+        }
+    }
+    function end_lvl( &$output, $depth = 0, $args = array() ) {
+        if ($depth === 0) {
+            $output .= '</div>';
+        }
+    }
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        if ($depth === 0) {
+            // Column heading
+            $output .= '<div class="footer10_link-column">';
+            $output .= '<div class="margin-bottom margin-xsmall"><div class="text-weight-semibold">' . esc_html($item->title) . '</div></div>';
+        } else {
+            // Link
+            $output .= '<a href="' . esc_url($item->url) . '" class="footer10_link">' . esc_html($item->title) . '</a>';
+        }
+    }
+    function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        if ($depth === 0) {
+            $output .= '</div>';
+        }
+    }
+}
+
+class Footer_Social_Walker extends Walker_Nav_Menu {
+    function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        // Extract the icon HTML from the menu item title (Menu Icons plugin)
+        if (preg_match('/(<span[^>]*class="menu-icon"[^>]*>.*?<\/span>)/i', $item->title, $icon_match)) {
+            $icon_html = $icon_match[1];
+        } else {
+            $icon_html = '';
+        }
+        $output .= '<a href="' . esc_url($item->url) . '" class="footer10_social-link w-inline-block" target="_blank" rel="noopener">';
+        $output .= '<div class="icon-embed-xsmall w-embed">' . $icon_html . '</div>';
+        $output .= '</a>';
+        error_log('Rendering social menu item: ' . print_r($item, true));
+    }
+}
